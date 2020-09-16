@@ -1,7 +1,8 @@
 package com.nh.zk.tool;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -40,12 +41,12 @@ public class Main {
             for (int i = 1; i < select.getLastRowNum() + 1; i++) {
                 System.out.println(i);
                 Row row = select.getRow(i);
-                getValue(row, 9);
+//                getSelect(row);
             }
         }
 
         if (null != judge) {
-            for (int i = 0; i < judge.getLastRowNum() + 1; i++) {
+            for (int i = 1; i < judge.getLastRowNum() + 1; i++) {
                 System.out.println(i);
                 Row row = judge.getRow(i);
                 getValue(row, 6);
@@ -53,10 +54,37 @@ public class Main {
         }
     }
 
-    private static void getValue(Row row, int count) {
-        for (int i = 0; i < count; i++) {
-            String title = row.getCell(i).getStringCellValue();
-            System.out.println(title);
+    private static void getSelect(Row row) {
+        Inst inst = new Inst();
+        inst.setQuestionType("2");
+        inst.setQuestionDescribe(row.getCell(0).getStringCellValue());
+        JSONArray jsonArray = new JSONArray();
+        for (int i = 2; i < 9 ; i+=2) {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("key",row.getCell(i).getStringCellValue());
+            jsonObject.put("value",row.getCell(i+1).getStringCellValue());
+            jsonArray.add(jsonObject);
         }
+        inst.setQuestionOptionsDesc(jsonArray.toJSONString());
+        inst.setQuestionAnswer(row.getCell(1).getStringCellValue());
+
+        System.out.println(inst.toString());
+    }
+
+    private static void getValue(Row row, int count) {
+        Inst inst = new Inst();
+        inst.setQuestionType("1");
+        inst.setQuestionDescribe(row.getCell(0).getStringCellValue());
+        JSONArray jsonArray = new JSONArray();
+        for (int i = 2; i < 6 ; i+=2) {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("key",row.getCell(i).getStringCellValue());
+            jsonObject.put("value",row.getCell(i+1).getStringCellValue());
+            jsonArray.add(jsonObject);
+        }
+        inst.setQuestionOptionsDesc(jsonArray.toJSONString());
+        inst.setQuestionAnswer(row.getCell(1).getStringCellValue());
+
+        System.out.println(inst.toString());
     }
 }
