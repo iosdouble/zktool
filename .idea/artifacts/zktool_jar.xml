@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="zktool:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/zktool_jar</output-path>
+    <root id="archive" name="zktool.jar">
+      <element id="module-output" name="zktool" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/org/apache/poi/poi-ooxml-schemas/3.17/poi-ooxml-schemas-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/stax/stax-api/1.0.1/stax-api-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/org/apache/poi/poi/3.17/poi-3.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/org/hyperic/sigar/com.springsource.org.hyperic.sigar/1.6.3/com.springsource.org.hyperic.sigar-1.6.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/apache-maven-3.3.9/repo/com/alibaba/fastjson/1.2.73/fastjson-1.2.73.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/java/com/nh/zk/linux/SysInfo.java" />
+    </root>
+  </artifact>
+</component>
